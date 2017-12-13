@@ -1,0 +1,44 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}
+
+.root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.root>.source {
+    height: 100%;
+    width: 150px;
+    background-color: #E3E3E3;
+    flex-grow: 0;
+}
+
+.root>.source>ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+}
+
+.root>.source>ul>li {
+    margin: 10px;
+    border-style: solid;
+    border-width: 2px;
+    background-color:#FFF;
+    border-radius: 10px;
+    height: 60px;
+    width: 100px;
+    text-align: center;
+    line-height: 60px;
+}
+
+.root>.container {
+    flex-grow: 1;
+    border: 1px solid red;
+}
