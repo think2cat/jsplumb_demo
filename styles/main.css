@@ -40,5 +40,5 @@ body {
 
 .root>.container {
     flex-grow: 1;
-    border: 1px solid red;
+    background-color:#333;
 }
