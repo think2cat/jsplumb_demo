@@ -9,6 +9,8 @@ let init = () => {
     $(".container").droppable({
         drop: (event,ui)=>{
             console.log(event, ui);
+            var sourceDom = ui.draggable.first();
+			$(".container").append($("<div>" + sourceDom.text() + "</div>"));
         }
     });
 	$(".source").find("li").draggable({

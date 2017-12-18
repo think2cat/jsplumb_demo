@@ -26,7 +26,8 @@ body {
     padding: 10px;
 }
 
-.root>.source>ul>li {
+.root>.source>ul>li,
+.root>.container>div {
     margin: 10px;
     border-style: solid;
     border-width: 2px;
@@ -41,4 +42,10 @@ body {
 .root>.container {
     flex-grow: 1;
     background-color:#333;
+}
+.root>.container>div{
+    float:left;
+}
+.root>.container>div:hover{
+    box-shadow: 0 0 3px #8e9cc9;
 }
