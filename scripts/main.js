@@ -7,14 +7,24 @@ let init = () => {
     }
     $(".source").append("<ul>" + t.join("") + "</ul>");
     $(".container").droppable({
-        drop: (event,ui)=>{
+        drop: (event, ui) => {
             console.log(event, ui);
-            var sourceDom = ui.draggable.first();
-			$(".container").append($("<div>" + sourceDom.text() + "</div>"));
+            let sourceDom = ui.draggable.first();
+			if (sourceDom.parent()[0] == document.getElementsByClassName("container")[0]) {
+				//如果拖动的是容器里面的，则重绘
+				jsPlumb.repaintEverything();
+				return;
+			}
+            let newDom = $("<div style='border-color:" + sourceDom.text() + "'>" + sourceDom.text() + "</div>");
+            $(".container").append(newDom);
+            newDom.offset({ "left": ui.offset.left, "top": ui.offset.top }).draggable({
+                containment: $(".container")
+            });
         }
     });
-	$(".source").find("li").draggable({
-		helper: "clone"
-	});
+    $(".source").find("li").draggable({
+        helper: "clone"
+    });
 };
 $(document).ready(init);
+
