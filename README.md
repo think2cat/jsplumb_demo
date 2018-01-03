@@ -2,6 +2,11 @@
 
 基于jsPlumb.js做的练习
 
+![image](https://github.com/think2cat/jsplumb_demo/edit/master/screenshow/js5.gif)
+
+# 教程（更新中）
+[jsPlumb学习笔记（1）](http://www.21ido.com/?p=1867)
+
 
 ### 安装
 
