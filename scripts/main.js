@@ -10,16 +10,48 @@ let init = () => {
         drop: (event, ui) => {
             console.log(event, ui);
             let sourceDom = ui.draggable.first();
-			if (sourceDom.parent()[0] == document.getElementsByClassName("container")[0]) {
-				//如果拖动的是容器里面的，则重绘
-				jsPlumb.repaintEverything();
-				return;
-			}
+            if (sourceDom.parent()[0] == document.getElementsByClassName("container")[0]) {
+                //如果拖动的是容器里面的，则重绘
+                jsPlumb.repaintEverything();
+                return;
+            }
             let newDom = $("<div style='border-color:" + sourceDom.text() + "'>" + sourceDom.text() + "</div>");
             $(".container").append(newDom);
             newDom.offset({ "left": ui.offset.left, "top": ui.offset.top }).draggable({
                 containment: $(".container")
             });
+            var connectorStyle = {
+                //端点样式
+                paintStyle: { fill: "#7AB02C", radius: 7 },
+                //连线类型
+                connector: ["Flowchart", { stub: [40, 60], gap: 10, cornerRadius: 5, alwaysRespectStubs: true }],
+                //连线样式
+                connectorStyle: {
+                    strokeWidth: 3,
+                    stroke: "#9C9DA9",
+                    joinstyle: "round",
+                    outlineStroke: "none"
+                },
+                //鼠标移上样式
+                hoverPaintStyle: {
+                    fill: "#216477",
+                    stroke: "#216477"
+                }
+            };
+            jsPlumb.addEndpoint(newDom, {
+                isTarget: true,
+                anchor: "Left"
+            }, connectorStyle);
+            jsPlumb.addEndpoint(newDom, {
+                isSource: true,
+                anchor: "Right",
+                paintStyle: {
+                    stroke: "#7AB02C",
+                    fill: "transparent",
+                    radius: 7,
+                    strokeWidth: 2
+                }
+            }, connectorStyle);
         }
     });
     $(".source").find("li").draggable({
