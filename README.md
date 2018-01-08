@@ -2,7 +2,7 @@
 
 基于jsPlumb.js做的练习
 
-![image](https://github.com/think2cat/jsplumb_demo/blob/master/screenshot/js5.gif)
+![image](https://github.com/think2cat/jsplumb_demo/blob/master/screenshot/js6.gif)
 
 # 教程（更新中）
 [jsPlumb学习笔记（1）](http://www.21ido.com/?p=1867)
