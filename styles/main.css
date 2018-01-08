@@ -41,7 +41,7 @@ body {
 
 .root>.container {
     flex-grow: 1;
-    background-color:#333;
+    background-color:#F3F3F3;
 }
 .root>.container>div{
     float:left;
