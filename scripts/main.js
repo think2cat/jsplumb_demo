@@ -1,5 +1,5 @@
 let itemArr = ["Red", "Blue", "Yellow", "Green"];
-
+let pointArr = [];
 let init = () => {
     let t = [];
     for (let i = 0; i < itemArr.length; i++) {
@@ -38,11 +38,11 @@ let init = () => {
                     stroke: "#216477"
                 }
             };
-            jsPlumb.addEndpoint(newDom, {
+            pointArr.push(jsPlumb.addEndpoint(newDom, {
                 isTarget: true,
                 anchor: "Left"
-            }, connectorStyle);
-            jsPlumb.addEndpoint(newDom, {
+            }, connectorStyle));
+            pointArr.push(jsPlumb.addEndpoint(newDom, {
                 isSource: true,
                 anchor: "Right",
                 paintStyle: {
@@ -50,13 +50,31 @@ let init = () => {
                     fill: "transparent",
                     radius: 7,
                     strokeWidth: 2
-                }
-            }, connectorStyle);
+                },
+                /*,
+                overlays: [
+                    ["Label", { label: "foo", id: "label", location: [-0.5, -0.5] }]
+                ],
+                */
+                connectorOverlays: [
+                    ["Arrow", {location: 1, id: "arrow" }]
+                    //["Label", { label: "foo", id: "label" }]
+                ]
+            }, connectorStyle));
         }
     });
     $(".source").find("li").draggable({
         helper: "clone"
     });
 };
+/*
+jsPlumb.importDefaults({
+    ConnectionOverlays: [
+        ["Arrow", { location: 1
+            //foldback: 0.618, ///0.618： 普通箭头，1：平底箭头，2：钻石箭头
+        }]
+    ]
+});
+*/
 $(document).ready(init);
 
