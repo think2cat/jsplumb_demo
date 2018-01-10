@@ -36,7 +36,11 @@ let init = () => {
                 hoverPaintStyle: {
                     fill: "#216477",
                     stroke: "#216477"
-                }
+                },
+                connectorOverlays: [
+                    ["Arrow", { location: 1, id: "arrow" }],
+                    ["Label", { label: "21ido.com", location: 0.5 }]
+                ]
             };
             pointArr.push(jsPlumb.addEndpoint(newDom, {
                 isTarget: true,
@@ -51,17 +55,13 @@ let init = () => {
                     radius: 7,
                     strokeWidth: 2
                 },
-                /*,
                 overlays: [
-                    ["Label", { label: "foo", id: "label", location: [-0.5, -0.5] }]
-                ],
-                */
-                connectorOverlays: [
-                    ["Arrow", {location: 1, id: "arrow" }]
-                    //["Label", { label: "foo", id: "label" }]
+                    ["Label", { label: "source", id: "label", location:[3, 0.5], cssClass: "endpointLabel"}]
                 ]
             }, connectorStyle));
+
         }
+
     });
     $(".source").find("li").draggable({
         helper: "clone"

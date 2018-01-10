@@ -49,3 +49,7 @@ body {
 .root>.container>div:hover{
     box-shadow: 0 0 3px #8e9cc9;
 }
+
+.endpointLabel{
+    color:red;
+}
