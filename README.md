@@ -6,7 +6,7 @@
 
 # 教程（更新中）
 [jsPlumb学习笔记（1）](http://www.21ido.com/?p=1867)
-
+[jsPlumb学习笔记（2）](http://www.21ido.com/?p=1881)
 
 ### 安装
 

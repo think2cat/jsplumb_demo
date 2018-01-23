@@ -1,4 +1,27 @@
 let itemArr = ["Red", "Blue", "Yellow", "Green"];
+
+var connectorStyle = {
+    //端点样式
+    paintStyle: { fill: "#7AB02C", radius: 7 },
+    //连线类型
+    connector: ["Flowchart", { stub: [40, 60], gap: 10, cornerRadius: 5, alwaysRespectStubs: true }],
+    //连线样式
+    connectorStyle: {
+        strokeWidth: 3,
+        stroke: "#9C9DA9",
+        joinstyle: "round",
+        outlineStroke: "none"
+    },
+    //鼠标移上样式
+    hoverPaintStyle: {
+        fill: "#216477",
+        stroke: "#216477"
+    },
+    connectorOverlays: [
+        ["Arrow", { location: 1, id: "arrow" }]
+    ]
+};
+
 let pointArr = [];
 let init = () => {
     let t = [];
@@ -20,28 +43,6 @@ let init = () => {
             newDom.offset({ "left": ui.offset.left, "top": ui.offset.top }).draggable({
                 containment: $(".container")
             });
-            var connectorStyle = {
-                //端点样式
-                paintStyle: { fill: "#7AB02C", radius: 7 },
-                //连线类型
-                connector: ["Flowchart", { stub: [40, 60], gap: 10, cornerRadius: 5, alwaysRespectStubs: true }],
-                //连线样式
-                connectorStyle: {
-                    strokeWidth: 3,
-                    stroke: "#9C9DA9",
-                    joinstyle: "round",
-                    outlineStroke: "none"
-                },
-                //鼠标移上样式
-                hoverPaintStyle: {
-                    fill: "#216477",
-                    stroke: "#216477"
-                },
-                connectorOverlays: [
-                    ["Arrow", { location: 1, id: "arrow" }],
-                    ["Label", { label: "21ido.com", location: 0.5 }]
-                ]
-            };
             pointArr.push(jsPlumb.addEndpoint(newDom, {
                 isTarget: true,
                 anchor: "Left"
@@ -54,10 +55,10 @@ let init = () => {
                     fill: "transparent",
                     radius: 7,
                     strokeWidth: 2
-                },
-                overlays: [
-                    ["Label", { label: "source", id: "label", location:[3, 0.5], cssClass: "endpointLabel"}]
-                ]
+                }
+                //overlays: [
+                //    ["Label", { label: "source", id: "label", location:[3, 0.5], cssClass: "endpointLabel"}]
+                //]
             }, connectorStyle));
 
         }
