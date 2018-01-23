@@ -1,4 +1,4 @@
-﻿# jsPlumb Demo
+# jsPlumb Demo
 
 基于jsPlumb.js做的练习
 
