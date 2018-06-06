@@ -2,11 +2,11 @@
 
 基于jsPlumb.js做的练习
 
-![jsPlumb.js](https://github.com/think2cat/jsplumb_demo/blob/master/screenshot/js7.gif)
+![jsPlumb.js](screenshot/js7.gif)
 
 # 教程（更新中）
-* [jsPlumb学习笔记（1）](https://21ido.com/2018/01/02/jsplumb-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-881-ef-bc-89/)
-* [jsPlumb学习笔记（2）](https://21ido.com/2018/01/10/jsplumb-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-882-ef-bc-89/)
+* [jsPlumb学习笔记（1）](http://21ido.com/2018/01/c1587beb/)
+* [jsPlumb学习笔记（2）](http://21ido.com/2018/01/d3edd405/)
 
 ### 安装
 
